@@ -13,6 +13,7 @@
 1. The image shows two boxes labeled "Positive tweets" and "Negative tweets". The box labeled "Postive tweets" contains the tweets: "I am happy because I am learning NLP" and "I am happy". The box labeled "Negative tweets" contains the tweets: "Iam sad, I am not learning NLP" and "I am sad"
 
 2. The image shows a table labeled "freqs: dictionary mapping from (word, class) to frequency": 
+
 | Vocabulary | PosFreq(1) | NegFreq(0) |
 --- | --- | ---
 I | 3 | 3

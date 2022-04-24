@@ -24,3 +24,24 @@ learning | 1 | 1
 NLP | 1 | 1
 sad | 0 | 2
 not | 0 | 1
+
+3. The image shows the table labeled "I am sad, I am not learning NLP":
+
+| Vocabulary | PosFreq(1) |
+ --- | --- 
+ I | **3**
+ am | **3**
+ happy | 2
+ because | 1
+ learning | **1**
+ NLP | **1**
+ sad | **0**
+ not | **0**
+ 
+ On the right of the table is the equation:
+ 
+ X_m = [1, SumOverW(freqs(w, 1), SumOverW(freqs(w, 0))]
+ 
+ An arrow from the second term of the equation above points to 8.
+ 
+ 4. 

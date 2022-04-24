@@ -45,7 +45,7 @@ not | 0 | 1
  An arrow from the second term of the right hand side of equation above points to 8.
  
  4. The image shows the table labeled "I am sad, I am not learning NLP":
- 5. 
+ 
  Vocabulary | NegFreq(0)
  --- | ---
  I | 3

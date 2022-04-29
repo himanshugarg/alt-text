@@ -66,3 +66,22 @@
 ## Reading - Preprocessing
 
 The image shows a box containing "tun~ing~ GREAT AI model" and the preprocessed tweet `[tun, great, ai, model]`. Two additional mappings are provided for illustration. The first mapping shows "tun" mapped to "tun", "tuned", "tuning" and the second shows "GREAT", "Great", "great" all mapped to "great"
+
+## Reading - Putting it all together
+
+1. The image shows a 2 stage flow in which the input "I am Happy Because i am learning NLP @deeplearning" becomes `[happy, learn, nlp]` after the first stage - Preprocessing stage. In the second stage - Feature Extraction - `[happy, learn, nlp]` becomes `[1, 4, 2]` in which the terms are Bias, Sum positive frequencies and Sum negative frequencies respectively
+
+2. The image shows a matrix X where the i'th row corresponds to the i'th tweet - 
+   - 1, X subscript 1 superscript (1), X subscript 2 superscript 1
+   - 1, X subscript 1 superscript (2), X subscript 2 superscript 2
+   - ...
+   - 1, X subscript 1 superscript (m), X subscript 2 superscript m
+   
+ 3. The image shows the following python code:
+    ```python
+    freqs = build_freqs(tweets, labels) # Build frequencies dictionary
+    X = np.zeros((m, 3)) #Initialize matrix X
+    for i in range(m): # For every tweet
+        p_tweet = process_tweet(tweets[i]) # Process tweet
+        X[i,:] = extract_features(p_tweet, freqs) # Extract Features
+    ```

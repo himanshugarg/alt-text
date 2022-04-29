@@ -85,9 +85,21 @@ The image shows a box containing "tun~ing~ GREAT AI model" and the preprocessed 
         p_tweet = process_tweet(tweets[i]) # Process tweet
         X[i,:] = extract_features(p_tweet, freqs) # Extract Features
     ```
+    
+## Reading - Logistic Regression: Overview 
+
+1. The image shows the formula for the sigmoid function whose input is the i'th x and theta. Its value is 1 over (1 + e raised to (-1 * theta transposed * i'th x). The plot of this function has y values ranging between 0 and 1 and is shaped like an S stretched from the end points such that there is one y corresponding to each x.
+
+2. The image shows i'th x and theta column vectors corresponding to the tweet "@YMourri and @AndrewYNG are tuning a GREAT AI model" or `[tun, ai, great, model]`. The i'th x column vector is `[1, 3476, 245]` and the theta column vector is `[0.00003, 0.0015, -0.00120]`. The corresponding point on the graph is shown at x = 4.92, y =~ 1 implying a positive classification.
 
 ## Reading - Logistic Regression: Training
 
 1. The image shows two flows depicting the steps of Logistic Regression. The first flow shows mathematical equations/formulas. The second flow is a mirror image of the first and shows the equivalent text for the math. The flow is - a box labeled theta (Initialize Parameters) -> h = h(X, theta) (classify/predict) -> gradient = Xtranspose(h-y)/m (get gradient) -> theta = theta - alpha * gradient (update) -> J(theta) (get loss). An arrow from the final box of "get loss" goes back to the box labeled "classify/predict". The arrow itself is labeled "until good enough" indicating the repetition cycles of the flow.
 
 2. The image shows a Iteration vs Cost graph. The Cost is close to 1000 at 0'th iteration and declines non-linearly to 0 at iteration 1000.
+
+## Reading - Logistic Regression: Testing
+
+1. The image shows an equation with the left handside containing a column vector `[0.3, 0.8, 0.5 ...]` being checked if >= 0.5. The right hand side contains the resulting column vector with values `[0, 1, 1, ...]` because the corresponding values compare accordingly.
+
+2. The image shows formula for calculating accuracy. It is the average over the m test examples of 1's (correct prediction) and 0's(incorrect prediction)

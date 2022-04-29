@@ -15,50 +15,54 @@
 
 2. The image shows a table labeled "freqs: dictionary mapping from (word, class) to frequency": 
 
-| Vocabulary | PosFreq(1) | NegFreq(0) |
---- | --- | ---
-I | 3 | 3
-am | 3 | 3
-happy | 2 | 0
-because | 1 | 0
-learning | 1 | 1
-NLP | 1 | 1
-sad | 0 | 2
-not | 0 | 1
+  | Vocabulary | PosFreq(1) | NegFreq(0) |
+  --- | --- | ---
+  I | 3 | 3
+  am | 3 | 3
+  happy | 2 | 0
+  because | 1 | 0
+  learning | 1 | 1
+  NLP | 1 | 1
+  sad | 0 | 2
+  not | 0 | 1
 
 3. The image shows the table labeled "I am sad, I am not learning NLP":
 
-| Vocabulary | PosFreq(1) |
- --- | --- 
- I | **3**
- am | **3**
- happy | 2
- because | 1
- learning | **1**
- NLP | **1**
- sad | **0**
- not | **0**
- 
- On the right of the table is the equation:
- 
- X_m = [1, **SumOverW(freqs(w, 1))**, SumOverW(freqs(w, 0))]
- 
- An arrow from the second term of the right hand side of equation above points to 8.
+  | Vocabulary | PosFreq(1) |
+   --- | --- 
+   I | **3**
+   am | **3**
+   happy | 2
+   because | 1
+   learning | **1**
+   NLP | **1**
+   sad | **0**
+   not | **0**
+
+   On the right of the table is the equation:
+
+   X_m = [1, **SumOverW(freqs(w, 1))**, SumOverW(freqs(w, 0))]
+
+   An arrow from the second term of the right hand side of equation above points to 8.
  
  4. The image shows the table labeled "I am sad, I am not learning NLP":
  
- Vocabulary | NegFreq(0)
- --- | ---
- I | 3
- am | 3
- happy | 0
- because | 0
- learning | 1
- NLP | 1
- sad | 2
- not | 1
- 
- On the right of the table is the equation:
- X_m = [1, SumOverW(freqs(w, 1)), **SumOverW(freqs(w, 0))**]
- 
- An arrow from the third term of the right hand side of equation above points to 11
+   Vocabulary | NegFreq(0)
+   --- | ---
+   I | 3
+   am | 3
+   happy | 0
+   because | 0
+   learning | 1
+   NLP | 1
+   sad | 2
+   not | 1
+
+   On the right of the table is the equation:
+   X_m = [1, SumOverW(freqs(w, 1)), **SumOverW(freqs(w, 0))**]
+
+   An arrow from the third term of the right hand side of equation above points to 11
+
+## Reading - Preprocessing
+
+The image shows a box containing "tun~ing~ GREAT AI model" and the preprocessed tweet `[tun, great, ai, model]`. Two additional mappings are provided for illustration. The first mapping shows "tun" mapped to "tun", "tuned", "tuning" and the second shows "GREAT", "Great", "great" all mapped to "great"

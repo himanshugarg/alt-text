@@ -85,3 +85,9 @@ The image shows a box containing "tun~ing~ GREAT AI model" and the preprocessed 
         p_tweet = process_tweet(tweets[i]) # Process tweet
         X[i,:] = extract_features(p_tweet, freqs) # Extract Features
     ```
+
+## Reading - Logistic Regression: Training
+
+1. The image shows two flows depicting the steps of Logistic Regression. The first flow shows mathematical equations/formulas. The second flow is a mirror image of the first and shows the equivalent text for the math. The flow is - a box labeled theta (Initialize Parameters) -> h = h(X, theta) (classify/predict) -> gradient = Xtranspose(h-y)/m (get gradient) -> theta = theta - alpha * gradient (update) -> J(theta) (get loss). An arrow from the final box of "get loss" goes back to the box labeled "classify/predict". The arrow itself is labeled "until good enough" indicating the repetition cycles of the flow.
+
+2. The image shows a Iteration vs Cost graph. The Cost is close to 1000 at 0'th iteration and declines non-linearly to 0 at iteration 1000.

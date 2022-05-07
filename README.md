@@ -1,5 +1,23 @@
 # Week 2
 
+## Reading - Probability and Bayes' Rule
+
+You learned about probabilities and Bayes' rule. 
+
+Corpus of tweets - represented as a 4x5 grid with 13 green boxes representing Positive and 7 ping representing Negative
+
+A -> Positive tweet
+
+P(A) = N(pos)/N = 13/20 = 0.65
+
+P(Negative) = 1 - P(Positive) = 0.35
+
+To calculate a probability of a certain event happening, you take the count of that specific event and you divide by the sum of all events. Furthermore, the sum of all probabilities has to equal 1. 
+
+Image containing a Corpus of tweets represented as a 4x5 grid with 10 green boxes representing Positive, 3 presenting Positive AND happy, 1 representing negative and happy. Also is shown, a Venn diagram illustrating the embedded equation P(A ∩ B) = P(A, B) = 3/20 = 0.15. The Venn diagram contains a rectangle representing the Corpus. Within it are two partially overlapping circles - blue the smaller one representing "happy" and green i.e. the larger one representing "Positive". The partially overlapping area represents the intersection "happy" ∩ Positive.
+
+To compute the probability of 2 events happening, like "happy" and "positive" in the picture above, you would be looking at the intersection, or overlap of events. In this case red and blue boxes overlap in 3 boxes. So the answer is 3/20.
+
 ## Reading - Bayes' Rule
 
 Conditional probabilities help us reduce the sample search space. For example given a specific event already happened, i.e. we know the word is happy:
@@ -75,8 +93,6 @@ not | 0.10 | 0.15
 Product of P(w|pos)/P(w|neg) for all the words in the tweet = 0.14 / 0.10 = 1.4 > 1
 
 A score greater than 1 indicates that the class is positive, otherwise it is negative.
-
-## Reading - Laplacian Smoothing (no images)
 
 ## Reading - Log Likelihood, Part 1
 

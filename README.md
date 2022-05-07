@@ -76,6 +76,56 @@ Product of P(w|pos)/P(w|neg) for all the words in the tweet = 0.14 / 0.10 = 1.4 
 
 A score greater than 1 indicates that the class is positive, otherwise it is negative.
 
+## Reading - Laplacian Smoothing (no images)
+
+## Reading - Log Likelihood, Part 1
+
+Log Likelihood, Part 1
+
+To compute the log likelihood, we need to get the ratios and use them to compute a score that will allow us to decide whether a tweet is positive or negative. The higher the ratio, the more positive the word is:
+
+<-- Negative (close to 0) -- Neutral (close to 1) -- Positive (towards infinity) -->
+
+word | Pos | Neg | ratio
+-- | -- | -- | --
+I | 0.19 | 0.20
+am | 0.19 | 0.20
+happy | 0.14 | 0.10
+because | 0.10 | 0.05
+learning | 0.10 | 0.10
+NLP | 0.10 | 0.10
+sad | 0.10 | 0.15
+not | 0.10 | 0.15
+
+ratio(w_i) = P(w_i|Pos) / P(w_i|Neg) ~ (freq(w_i, 1)+1)/(freq(w_i, 0)+1)
+
+To do inference, you can compute the following: 
+
+P(pos)P(neg)∏i=1mP(wi∣pos)P(wi∣neg)>1 \frac{P(p o s)}{P(n e g)}  \prod_{i=1}^{m} \frac{P\left(w_{i} \mid p o s\right)}{P\left(w_{i} \mid n e g\right)}  >1 P(neg)P(pos)​∏i=1m​P(wi​∣neg)P(wi​∣pos)​>1
+
+As mmm gets larger, we can get numerical flow issues, so we introduce the log⁡\loglog, which gives you the following equation: 
+
+log⁡(P(pos)P(neg)∏i=1nP(wi∣pos)P(wi∣neg))⇒log⁡P(pos)P(neg)+∑i=1nlog⁡P(wi∣pos)P(wi∣neg) \log \left(\frac{P(p o s)}{P(n e g)} \prod_{i=1}^{n} \frac{P\left(w_{i} \mid p o s\right)}{P\left(w_{i} \mid n e g\right)}\right) \Rightarrow \log \frac{P(p o s)}{P(n e g)}+\sum_{i=1}^{n} \log \frac{P\left(w_{i} \mid p o s\right)}{P\left(w_{i} \mid n e g\right)} log(P(neg)P(pos)​∏i=1n​P(wi​∣neg)P(wi​∣pos)​)⇒logP(neg)P(pos)​+∑i=1n​logP(wi​∣neg)P(wi​∣pos)​
+
+The first component is called the log prior and the second component is the log likelihood. We further introduce λ\lambda λ as follows: 
+
+doc: I am happy because I am learning.
+
+lambda(w) = log (P(w/pos)/P(w/neg)) 
+
+word | Pos | Neg | lambda
+-- | -- | -- | --
+1 | 0.05 | 0.05 | 0
+am | 0.04 | 0.04 | 0
+happy | 0.09 | 0.01 | lambda(happy) = log(0.09/0.01) = 2.2
+because | 0.01 | 0.01
+learning | 0.03 | 0.01
+NLP | 0.02 | 0.02
+sad | 0.01 | 0.09
+not | 0.02 | 0.03
+
+Having the λ\lambdaλ dictionary will help a lot when doing inference. 
+
 # Week 1
 ## Reading - Supervised ML & Sentiment Analysis
 

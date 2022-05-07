@@ -52,7 +52,7 @@ learning | 1 | 1
 NLP | 1 | 1
 sad | 1 | 2
 not | 1 | 2
-N | 13 | 12
+N | 13 | 13
 
 Assuming these Positive tweets:
 - I am happy because I am learning NLP

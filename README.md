@@ -149,6 +149,53 @@ log likelihood = 0 + 0 + 2.2 + 0 + 0 + 0 + 1.1 = 3.3
 
 As you can see above, since 3.3>0, we will classify the document to be positive. If we got a negative number we would have classified it to the negative class. 
 
+## Reading - Training naive Bayes
+
+To train your naïve Bayes classifier, you have to perform the following steps:
+1) Get or annotate a dataset with positive and negative tweets
+2) Preprocess the tweets: process_tweet(tweet) ➞ [w1, w2, w3, ...]:
+
+    - Lowercase
+    - Remove punctuation, urls, names
+    - Remove stop words
+    - Stemming
+    - Tokenize sentences
+
+3) Compute freq(w, class):
+    
+    Positive tweets:
+    
+        - [happi, because, learn, NLP]
+        - [happi, not, sad]
+    
+    Negative tweets
+    
+        - [sad, not, learn, NLP]
+        - [sad, not, happi]
+   
+   a word count of the above gives the following table:
+   word | Pos | Neg
+   -- | -- | --
+   happi | 2 | 1
+   because | 1 | 0
+   learn | 1 | 1
+   NLP | 1 | 1
+   sad | 1 | 2
+   not | 1 | 2
+   N | 7 | 7
+
+4) Get P(w|pos),P(w|neg)
+
+    You can use the table above to compute the probabilities.
+
+5) Get lambda(w)
+
+    λ(w)=log⁡P(w∣pos)P(w∣neg) 
+
+6) Compute logprior=log⁡(P(pos)/P(neg))
+
+    logprior = log (D(pos)/D(neg)), where D(pos) and D(neg) correspond to the number of positive and negative documents respectively
+
 # Week 1
 ## Reading - Supervised ML & Sentiment Analysis
 

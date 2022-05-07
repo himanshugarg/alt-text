@@ -1,3 +1,25 @@
+# Week 2
+
+## Bayes' Rule
+
+Conditional probabilities help us reduce the sample search space. For example given a specific event already happened, i.e. we know the word is happy:
+
+A Venn diagram diagram illustrating the embedded equation P(Positive|"happy") = P(Positive ∩ "happy") / P("happy"). The Venn diagram contains a rectangle representing the Corpus. Within it are two partially overlapping circles - blue the smaller one representing "happy" and green i.e. the larger one representing "Positive". The partially overlapping area represents the intersection "happy" ∩ Positive.
+
+Then you would only search in the blue circle above. The numerator will be the red part and the denominator will be the blue part. This leads us to conclude the following: 
+
+P(Positive|"happy") = P(Positive ∩ "happy")/P("happy")
+
+P("happy"|Positive) = P("happy" ∩ Positive)/P(Positive)
+
+Substituting the numerator in the right hand side of the first equation, you get the following: 
+
+P(Positive|"happy") = P("happy"|Positive) x P(Positive)/P("happy")
+
+Note that we multiplied by P(positive) to make sure we don't change anything.  That concludes Bayes Rule which is defined as 
+
+P(X∣Y)=P(Y∣X)P(X)/P(Y)
+
 # Week 1
 ## Reading - Supervised ML & Sentiment Analysis
 

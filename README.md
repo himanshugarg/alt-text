@@ -101,11 +101,11 @@ ratio(w_i) = P(w_i|Pos) / P(w_i|Neg) ~ (freq(w_i, 1)+1)/(freq(w_i, 0)+1)
 
 To do inference, you can compute the following: 
 
-P(pos)P(neg)∏i=1mP(wi∣pos)P(wi∣neg)>1 \frac{P(p o s)}{P(n e g)}  \prod_{i=1}^{m} \frac{P\left(w_{i} \mid p o s\right)}{P\left(w_{i} \mid n e g\right)}  >1 P(neg)P(pos)​∏i=1m​P(wi​∣neg)P(wi​∣pos)​>1
+(P(pos)/P(neg)) times the product of P(w_i|pos)/P(w_i|neg) for i ranging from 1 to m.
 
-As mmm gets larger, we can get numerical flow issues, so we introduce the log⁡\loglog, which gives you the following equation: 
+As m gets larger, we can get numerical flow issues, so we introduce the log, which gives you the following equation: 
 
-log⁡(P(pos)P(neg)∏i=1nP(wi∣pos)P(wi∣neg))⇒log⁡P(pos)P(neg)+∑i=1nlog⁡P(wi∣pos)P(wi∣neg) \log \left(\frac{P(p o s)}{P(n e g)} \prod_{i=1}^{n} \frac{P\left(w_{i} \mid p o s\right)}{P\left(w_{i} \mid n e g\right)}\right) \Rightarrow \log \frac{P(p o s)}{P(n e g)}+\sum_{i=1}^{n} \log \frac{P\left(w_{i} \mid p o s\right)}{P\left(w_{i} \mid n e g\right)} log(P(neg)P(pos)​∏i=1n​P(wi​∣neg)P(wi​∣pos)​)⇒logP(neg)P(pos)​+∑i=1n​logP(wi​∣neg)P(wi​∣pos)​
+log of the previous formula = log (P(pos)/P(neg)) + summation of log(P(w_i|pos)/P(w_i|neg)) for i ranging from 1 to m
 
 The first component is called the log prior and the second component is the log likelihood. We further introduce λ\lambda λ as follows: 
 

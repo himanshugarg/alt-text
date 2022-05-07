@@ -4,7 +4,7 @@
 
 You learned about probabilities and Bayes' rule. 
 
-Corpus of tweets - represented as a 4x5 grid with 13 green boxes representing Positive and 7 ping representing Negative
+Image containing a corpus of tweets - represented as a 4x5 grid with 13 green boxes representing Positive and 7 orange representing Negative tweets.
 
 A -> Positive tweet
 

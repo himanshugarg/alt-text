@@ -90,7 +90,7 @@ NLP | 0.10 | 0.10
 sad | 0.10 | 0.15
 not | 0.10 | 0.15
 
-Product of P(w|pos)/P(w|neg) for all the words in the tweet = 0.14 / 0.10 = 1.4 > 1
+Product of P(w|pos)/P(w|neg) for all the words in the tweet = (0.20/0.20) * (0.20/0.20) * (0.14/0.10) * (0.20/0.20) * (0.20/0.20) * (0.10/0.10) = 0.14 / 0.10 = 1.4 > 1
 
 A score greater than 1 indicates that the class is positive, otherwise it is negative.
 

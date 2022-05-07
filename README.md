@@ -236,15 +236,14 @@ There are several mistakes that could cause you to misclassify an example or a t
 
 - Removing punctuation
 - Removing words
-    Tweet: This is not good, because your attitude is not even close to being nice. 
-    processed_tweet: [good, attitude, close, nice]
-        
-    Tweet: My beloved grandmother :(
-    processed_tweet: [belov, grandmoth]
+    - - Tweet: This is not good, because your attitude is not even close to being nice. 
+      - processed_tweet: [good, attitude, close, nice]        
+    - - Tweet: My beloved grandmother :(
+      - processed_tweet: [belov, grandmoth]
         
 - Word order
-    Tweet: I am happy because I did not go. (positive)
-    Tweet: I am not happy because I did go. (negative)
+    - Tweet: I am happy because I did not go. (positive)
+    - Tweet: I am not happy because I did go. (negative)
 - Adversarial attacks
 
 These include sarcasm, irony, euphemisms.

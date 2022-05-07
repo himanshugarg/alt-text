@@ -196,6 +196,40 @@ To train your naïve Bayes classifier, you have to perform the following steps:
 
     logprior = log (D(pos)/D(neg)), where D(pos) and D(neg) correspond to the number of positive and negative documents respectively
 
+## Reading - Testing naive Bayes
+
+word | lambda
+-- | --
+I | -0.01
+the | -0.01
+happi | 0.63
+because | 0.01
+pass | 0.5
+NLP | 0
+sad | -0.75
+not | -0.75
+
+- log-likelihood dictionary lambda(w) = log (P(w|pos)/P(w|neg))
+- logprior = log (D(pos)/D(neg)) = 0
+- Tweet: I, pass, the, NLP, interview
+    
+    score = -0.01 + 0.5 - 0.01 + 0 + logprior = 0.48
+    
+    pred = score > 0
+
+The example above shows how you can make a prediction given your lambda dictionary. In this example the logprior is 0 because we have the same amount of positive and negative documents (i.e. log⁡1 = 0 )
+
+## Reading - Naive Bayes Assumptions
+
+Naïve Bayes makes the independence assumption and is affected by the word frequencies in the corpus. For example, if you had the following:
+
+1. Image of Sahara desert labeled "It is sunny and hot in the Sahara desert"
+2. Image labeled "It's always cold and snowy in _____"
+
+In the first image, you can see the word sunny and hot tend to depend on each other and are correlated to a certain extent with the word "desert". Naive Bayes assumes independence throughout. Furthermore, if you were to fill in the sentence on the right, this naive model will assign equal weight to the words "spring, summer, fall, winter". 
+
+On Twitter, there are usually more positive tweets than negative ones. However, some "clean" datasets you may find are artificially balanced to have to the same amount of positive and negative tweets. Just keep in mind, that in the real world, the data could be much noisier. 
+
 # Week 1
 ## Reading - Supervised ML & Sentiment Analysis
 

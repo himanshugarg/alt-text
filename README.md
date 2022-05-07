@@ -101,7 +101,7 @@ ratio(w_i) = P(w_i|Pos) / P(w_i|Neg) ~ (freq(w_i, 1)+1)/(freq(w_i, 0)+1)
 
 To do inference, you can compute the following: 
 
-(P(pos)/P(neg)) times the product of P(w_i|pos)/P(w_i|neg) for i ranging from 1 to m.
+(P(pos)/P(neg)) times the product of P(w_i|pos)/P(w_i|neg) for i ranging from 1 to m is greater than 1
 
 As m gets larger, we can get numerical flow issues, so we introduce the log, which gives you the following equation: 
 

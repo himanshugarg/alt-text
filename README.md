@@ -117,7 +117,7 @@ word | Pos | Neg | lambda
 -- | -- | -- | --
 1 | 0.05 | 0.05 | 0
 am | 0.04 | 0.04 | 0
-happy | 0.09 | 0.01 | lambda(happy) = log(0.09/0.01) = 2.2
+happy | 0.09 | 0.01 | lambda(happy) = log(0.09/0.01) ~ 2.2
 because | 0.01 | 0.01
 learning | 0.03 | 0.01
 NLP | 0.02 | 0.02

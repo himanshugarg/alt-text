@@ -1,6 +1,6 @@
 # Week 2
 
-## Bayes' Rule
+## Reading - Bayes' Rule
 
 Conditional probabilities help us reduce the sample search space. For example given a specific event already happened, i.e. we know the word is happy:
 
@@ -19,6 +19,62 @@ P(Positive|"happy") = P("happy"|Positive) x P(Positive)/P("happy")
 Note that we multiplied by P(positive) to make sure we don't change anything.  That concludes Bayes Rule which is defined as 
 
 P(X∣Y)=P(Y∣X)P(X)/P(Y)
+
+## Reading - Naive Bayes Introduction
+
+To build a classifier, we will first start by creating conditional probabilities given the following table:
+
+word | Pos | Neg
+-- | -- | --
+I | 3 | 3
+am | 3 | 3
+happy | 2 | 1
+because | 1 | 0
+learning | 1 | 1
+NLP | 1 | 1
+sad | 1 | 2
+not | 1 | 2
+N | 13 | 12
+
+Assuming these Positive tweets:
+- I am happy because I am learning NLP
+- I am happy, not sad
+
+and these Negative tweets:
+- I am sad, I am not learning NLP
+- I am sad, not happy
+
+This allows us compute the following table of probabilities:
+
+word | Pos | Neg
+-- | -- | --
+I | 0.24 | 0.25
+am | 0.24 | 0.25
+happy | 0.15 | 0.08
+because | 0.08 | 0
+learning | 0.08 | 0.08
+NLP | 0.08 | 0.08
+sad | 0.08 | 0.17
+not | 0.08 | 0.17
+
+Once you have the probabilities, you can compute the likelihood score as follows
+
+Tweet: I am happy today; I am learning
+
+word | Pos | Neg
+-- | -- | --
+I | 0.20 | 0.20
+am | 0.20 | 0.20 
+happy | 0.14 | 0.10
+because | 0.10 | 0.05
+learning | 0.10 | 0.10
+NLP | 0.10 | 0.10
+sad | 0.10 | 0.15
+not | 0.10 | 0.15
+
+Product of P(w|pos)/P(w|neg) for all the words in the tweet = 0.14 / 0.10 = 1.4 > 1
+
+A score greater than 1 indicates that the class is positive, otherwise it is negative.
 
 # Week 1
 ## Reading - Supervised ML & Sentiment Analysis

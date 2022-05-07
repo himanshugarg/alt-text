@@ -230,6 +230,25 @@ In the first image, you can see the word sunny and hot tend to depend on each ot
 
 On Twitter, there are usually more positive tweets than negative ones. However, some "clean" datasets you may find are artificially balanced to have to the same amount of positive and negative tweets. Just keep in mind, that in the real world, the data could be much noisier. 
 
+## Reading - Error Analysis
+
+There are several mistakes that could cause you to misclassify an example or a tweet. For example, 
+
+    - Removing punctuation
+    - Removing words
+        Tweet: This is not good, because your attitude is not even close to being nice. 
+        processed_tweet: [good, attitude, close, nice]
+        
+        Tweet: My beloved grandmother :(
+        processed_tweet: [belov, grandmoth]
+        
+    - Word order
+        Tweet: I am happy because I did not go. (positive)
+        Tweet: I am not happy because I did go. (negative)
+    - Adversarial attacks
+
+These include sarcasm, irony, euphemisms.
+
 # Week 1
 ## Reading - Supervised ML & Sentiment Analysis
 

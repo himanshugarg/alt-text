@@ -126,6 +126,29 @@ not | 0.02 | 0.03
 
 Having the λ\lambdaλ dictionary will help a lot when doing inference. 
 
+## Reading - Log Likelihood Part 2
+
+Once you computed the λ\lambdaλ dictionary, it becomes straightforward to do inference: 
+
+doc: I am happy because I am learning
+
+word | Pos | Neg | lambda
+-- | -- | -- | --
+I | 0.05 | 0.05 | 0
+am | 0.04 | 0.04 | 0
+happy | 0.09 | 0.01 | 2.2
+because | 0.01 | 0.01 | 0
+learning | 0.03 | 0.01 | 1.1
+NLP | 0.02 | 0.02 | 0
+sad | 0.01 | 0.09 | -2.2
+not | 0.02 | 0.03 | -0.4
+
+sum of log(P(w_i|pos)/P(w_i|neg)) over all i ranging from 1 to m = sum of lambda(w_i) over all i ranging from 1 to m
+
+log likelihood = 0 + 0 + 2.2 + 0 + 0 + 0 + 1.1 = 3.3
+
+As you can see above, since 3.3>0, we will classify the document to be positive. If we got a negative number we would have classified it to the negative class. 
+
 # Week 1
 ## Reading - Supervised ML & Sentiment Analysis
 

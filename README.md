@@ -9,6 +9,20 @@ Applications of Vector Space Models are illustrated using three pictures labeled
 
 The famous quote by Firth says, "**You shall know a word by the company it keeps**". When learning these vectors, you usually make use of the neighboring words to extract meaning and information about the center word. If you were to cluster these vectors together, as you will see later in this specialization, you will see that adjectives, nouns, verbs, etc. tend to be near one another. Another cool fact, is that synonyms and antonyms are also very close to one another. This is because you can easily interchange them in a sentence and they tend to have similar neighboring words!
 
+## Word by Word and Word by Doc
+### Word by Word Design
+
+We will start by exploring the word by word design. Assume that you are trying to come up with a vector that will represent a certain word.  One possible design would be to create a matrix where each row and column corresponds to a word in your vocabulary. Then you can iterate over a document and see the number of times each word shows up next each other word. You can keep track of the number in the matrix. In the video I spoke about a parameter _K_. You can think of _K_ as the bandwidth that decides whether two words are next to each other or not. 
+
+Given two sentences:
+- I like **simple** **data**
+- I prefer **simple** raw **data**
+
+Then for k = 2, one row of matrix would look like this:
+| simple | raw | like | I
+--- | --- | --- | --- | ---
+data | 2 | 1 | 1 | 0
+
 
 # Week 2
 

@@ -19,10 +19,12 @@ Given two sentences:
 - I prefer **simple** raw **data**
 
 Then for k = 2, one row of matrix would look like this:
-| simple | raw | like | I
---- | --- | --- | --- | ---
-data | 2 | 1 | 1 | 0
 
+|     | simple | raw | like |  I |
+| --- | --- | ---    | --- | ---  | ---|
+| data|  2  |   1    |  1  |  0   |    |
+
+The matrix above has n columns.
 
 # Week 2
 

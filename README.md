@@ -1,3 +1,15 @@
+# Week 3
+## Vector Space Models
+Vector spaces are fundamental in many applications in NLP. If you were to represent a word, document, tweet, or any form of text, you will probably be encoding it as a vector. These vectors are important in tasks like information extraction, machine translation, and chatbots. Vector spaces could also be used to help you identify relationships between words as follows: 
+
+- You eat **cereal** from a **bowl**
+- You **buy** something and someone else **sells** it
+
+Applications of Vector Space Models are illustrated using three pictures labeled Information Extraction, Machine Translation and Chatbots. The Information Extraction picture shows the question words Who, What, Where, How, When, Why. The Machine Translation picture shows a web interface translating from English to an Asian language. The chatbot picture shows two balloons depicting words spoken in a dialog. One of the two balloons has a Robot indicating that one participant in the dialog is a bot.
+
+The famous quote by Firth says, "**You shall know a word by the company it keeps**". When learning these vectors, you usually make use of the neighboring words to extract meaning and information about the center word. If you were to cluster these vectors together, as you will see later in this specialization, you will see that adjectives, nouns, verbs, etc. tend to be near one another. Another cool fact, is that synonyms and antonyms are also very close to one another. This is because you can easily interchange them in a sentence and they tend to have similar neighboring words!
+
+
 # Week 2
 
 ## Reading - Probability and Bayes' Rule

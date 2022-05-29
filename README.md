@@ -72,6 +72,15 @@ distance(v, w) = sqrt((1-0) ** 2 + (6-4) ** 2 + (8-6) ** 2)
 
 = sqrt(1 + 4 + 4) = sqrt(9) = 3
 
+## Cosine Similarity: Intuition
+
+One of the issues with euclidean distance is that it is not always accurate and sometimes we are not looking for that type of similarity metric. For example, when comparing large documents to smaller ones with euclidean distance one could get an inaccurate result. Look at the diagram below:
+
+Diagram showing three vectors corresponding to the Food corpus, Agriculture corpus and the History corpus. The angle  between Food and Agriculture vector is smaller but the distance between them is larger than that between Agriculture and History corpora.
+
+Normally the **food** corpus and the **agriculture** corpus are more similar because they have the same proportion of words. However the food corpus is much smaller than the agriculture corpus. To further clarify, although the history corpus and the agriculture corpus are different, they have a smaller euclidean distance. Hence d2 < d1.
+
+To solve this problem, we look at the cosine between the vectors. This allows us to compare the angles beta (angle between history corpus and agriculture corpus) and alpha (angle between food corpus and agriculture corpus).
 # Week 2
 
 ## Reading - Probability and Bayes' Rule

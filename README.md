@@ -20,11 +20,57 @@ Given two sentences:
 
 Then for k = 2, one row of matrix would look like this:
 
-|     | simple | raw | like |  I |
-| --- | --- | ---    | --- | ---  | ---|
-| data|  2  |   1    |  1  |  0   |    |
+|     | simple | raw    | like |  I   |
+| --- | ---    | ---    | ---  | ---  | 
+| data|  2     |   1    |  1   |  0   | 
 
 The matrix above has n columns.
+
+In the example above, you can see how we are keeping track of the number of times words occur together within a certain distance kkk. At the end, you can represent the word data, as a vector v=[2,1,1,0].
+
+### Word by Document Design
+
+You can now apply the same concept and map words to documents. The rows could correspond to words and the columns to documents. The numbers in the matrix correspond to the number of times each word showed up in the document. 
+
+| | Entertainment | Economy | Machine Learning |
+| --- | --- | --- | --- |
+| data | 500 | 6620 | 9320 | 
+| film | 7000 | 4000 | 1000 |
+
+You can represent the entertainment category, as a vector v = [500,7000]. You can then also compare categories as follows by doing a simple plot. 
+
+The Entertainment vector will be [6620, 4000] and the Machine Learning vector will be [9320, 1000].
+
+Let us assume that you want to compute the distance between two points: A,BA, BA,B. To do so, you can use the euclidean distance defined as 
+
+d(B,A) = sqrt((B1​−A1​) ** 2 + (B2​−A2​) ** 2)
+
+### Euclidean Distance
+
+Corpus A: (500, 7000)
+Corpus B: (9320, 1000)
+
+d(B, A) = sqrt((B1​−A1​) ** 2 + (B2​−A2​) ** 2)
+
+d(B, A) = sqrt(8820 ** 2 , -6000 ** 2)
+
+You can generalize finding the distance between the two points (A,B) to the distance between an nnn dimensional vector as follows: 
+
+d(v, w) = sqrt(sum(v_i - w_i) ** 2)
+
+Here is an example where I calculate the distance between 2 vectors (n = 3).
+
+|  | data | boba | ice-cream |
+| --- | --- | --- | --- |
+| AI | 6 | 0 | 1 |
+| drinks | 0 | 4 | 6| 
+| food | 0 | 6 | 8 |
+
+if v represents "boba" and w represents "ice-cream" then:
+
+distance(v, w) = sqrt((1-0) ** 2 + (6-4) ** 2 + (8-6) ** 2)
+
+= sqrt(1 + 4 + 4) = sqrt(9) = 3
 
 # Week 2
 

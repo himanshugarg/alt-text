@@ -81,6 +81,24 @@ Diagram showing three vectors corresponding to the Food corpus, Agriculture corp
 Normally the **food** corpus and the **agriculture** corpus are more similar because they have the same proportion of words. However the food corpus is much smaller than the agriculture corpus. To further clarify, although the history corpus and the agriculture corpus are different, they have a smaller euclidean distance. Hence d2 < d1.
 
 To solve this problem, we look at the cosine between the vectors. This allows us to compare the angles beta (angle between history corpus and agriculture corpus) and alpha (angle between food corpus and agriculture corpus).
+
+# Cosine Similarity 
+
+Before getting into the cosine similarity function remember that the norm of a vector is defined as:
+
+    ∥v⃗∥ = \sqrt{\sum_{i=1}^{n} |v_i|^2 }
+
+​
+The dot product is then defined as: 
+
+    v⃗⋅w⃗ = \vec{v} \cdot \vec{w} = \sum_{i=1}^{n} v_i \cdot w_i 
+
+The following cosine similarity equation makes sense:
+
+    \cos (\beta) = \frac{\hat v \cdot \hat w}{\| \hat v \| \| \hat w \|}
+
+If \hat v and \hat w are the same then you get the numerator to be equal to the denominator. Hence β=0. On the other hand, the dot product of two orthogonal (perpendicular) vectors is 0. That takes place when β=90.
+
 # Week 2
 
 ## Reading - Probability and Bayes' Rule

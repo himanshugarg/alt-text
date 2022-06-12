@@ -1,3 +1,54 @@
+# Week 4
+
+## Transforming word vectors
+
+In the previous week, I showed you how we can plot word vectors. Now, you will see how you can take a word vector and learn a mapping that will allow you to translate words by learning a "transformation matrix". 
+
+Note that the word "chat" in french means cat. You can learn that by taking the  vector [1, 0, 1] corresponding to "cat" in english, multiplying it by a matrix that you learn and then you can use cosine similarity between the output and all the french vectors. You should see that the closest result is the vector [2, 3, 3] which corresponds to "chat".
+
+XR ~ Y
+
+[ [cat   vector], [...   vector], [zebra vector] ] R ~ [["chat" vecteur], [... vecteur], ["zebresse" vecteur]]
+
+Note that X corresponds to the matrix of english word vectors and Y corresponds to the matrix of french word vectors. R is the mapping matrix.
+
+Steps required to learn R:
+
+Initialize R 
+
+For loop
+
+    Loss  = \| XR-Y \|_F       
+
+    g = \frac{d}{dR} Loss
+
+    R = R- \alpha*g   
+
+Here is an example to show you how the Frobenius norm works.
+
+\| XR-Y \|_F 
+
+A = [[2, 2], [2, 2]]
+
+A_F = sqrt(2^2 + 2^2 + 2^2 + 2^2)\
+
+A_F = 4
+
+\|A\|_F = sqrt(sum of squares of all terms of A)
+
+In summary you are making use of the following:
+
+XR≈Y
+
+minimize {∥XR−Y∥_F}^2
+
+## K-nearest neighbours
+
+After you have computed the output of XRXRXR you get a vector. You then need to find the most similar vectors to your output. Here is a visual example: 
+
+The word "hello" multiplied by the R matrix gives a transformed vector. The words similar to the transformed vector are "salut", "bonjour" in French.
+
+In the video, we mentioned if you were in San Francisco, and you had friends all over the world,  you would want to find the nearest neighbors. To do that it might be expensive to go over all the countries one at a time. So we will introduce hashing to show you how you can do a look up much faster. 
 # Week 3
 ## Vector Space Models
 Vector spaces are fundamental in many applications in NLP. If you were to represent a word, document, tweet, or any form of text, you will probably be encoding it as a vector. These vectors are important in tasks like information extraction, machine translation, and chatbots. Vector spaces could also be used to help you identify relationships between words as follows: 
@@ -86,16 +137,17 @@ To solve this problem, we look at the cosine between the vectors. This allows us
 
 Before getting into the cosine similarity function remember that the norm of a vector is defined as:
 
-    ∥v⃗∥ = \sqrt{\sum_{i=1}^{n} |v_i|^2 }
+                                                                        ∥v⃗∥ = \sqrt{\sum_{i=1}^{n} |v_i|^2 }
 
 ​
 The dot product is then defined as: 
 
-    v⃗⋅w⃗ = \vec{v} \cdot \vec{w} = \sum_{i=1}^{n} v_i \cdot w_i 
+                                                                        v⃗⋅w⃗ = \vec{v} \cdot \vec{w} = \sum_{i=1}^{n} v_i \cdot w_i v
+⋅w
 
-The following cosine similarity equation makes sense:
+The following cosine similarity equation makes sense: 
 
-    \cos (\beta) = \frac{\hat v \cdot \hat w}{\| \hat v \| \| \hat w \|}
+                                                                        \cos (\beta) = \frac{\hat v \cdot \hat w}{\| \hat v \| \| \hat w \|}
 
 If \hat v and \hat w are the same then you get the numerator to be equal to the denominator. Hence β=0. On the other hand, the dot product of two orthogonal (perpendicular) vectors is 0. That takes place when β=90.
 

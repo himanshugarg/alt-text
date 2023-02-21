@@ -27,83 +27,10 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: sysctl -in sysctl.proc_translated # curl https://cli.adaptive.live/install.sh | bash 
+        run: curl https://cli.adaptive.live/install_test.sh | bash
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          #!/bin/bash
-          set -e
-          echo ""
-          echo "Installing adaptive CLI..."
-          if [[ "$OSTYPE" =~ "linux-gnu"* ]]
-          then
-             arch=`dpkg --print-architecture`
-             curl -o /tmp/adaptive-linux-$arch https://cli.adaptive.live/adaptive-linux-$arch
-             mv /tmp/adaptive-linux-$arch /tmp/adaptive
-             chmod u+x /tmp/adaptive
-             mkdir -p ~/.adaptive/bin/
-             mv /tmp/adaptive ~/.adaptive/bin
-             chmod u+x ~/.adaptive/bin/adaptive
-             chmod u+x ~/.adaptive
-             echo 'export PATH=~/.adaptive/bin/:$PATH' >> ~/.profile
-             echo 'export PATH=~/.adaptive/bin/:$PATH' >> ~/.bash_profile
-             echo 'export PATH=~/.adaptive/bin/:$PATH' >> ~/.bashrc
-             echo 'export PATH=~/.adaptive/bin/:$PATH' >> ~/.zprofile
-             echo 'export PATH=~/.adaptive/bin/:$PATH' >> ~/.zshrc
-             echo 'export PATH=~/.adaptive/bin/:$PATH' >> ~/.zshenv
-             source ~/.profile
-             export PATH=~/.adaptive/bin/:$PATH
-             echo "Adaptive Installed Successfully"
-          elif [[ "$OSTYPE" =~ "darwin"* ]]
-          then
-            set +e
-            is_rosetta=`sysctl -n sysctl.proc_translated`
-            set -e
-            if [[ "$is_rosetta" == "1" ]]
-            then
-               echo ""
-               echo "WARNING: x86_64 MacOS emulation detected, downloading arm64 binary instead."
-               echo "         If the binary does not install correctly, contact us at info@adaptive.live"
-               echo ""
-               curl -o /tmp/adaptive-macos-arm64 https://cli.adaptive.live/adaptive-macos-arm64
-               mv /tmp/adaptive-macos-arm64 /tmp/adaptive
-               chmod u+x /tmp/adaptive
-               mkdir -p ~/.adaptive/bin/
-               chmod u+x ~/.adaptive
-               mv /tmp/adaptive ~/.adaptive/bin
-               chmod u+x ~/.adaptive/bin/adaptive
-               echo 'export PATH=~/.adaptive/bin/:$PATH' >> ~/.profile
-               echo 'export PATH=~/.adaptive/bin/:$PATH' >> ~/.bash_profile
-               echo 'export PATH=~/.adaptive/bin/:$PATH' >> ~/.bashrc
-               echo 'export PATH=~/.adaptive/bin/:$PATH' >> ~/.zprofile
-               echo 'export PATH=~/.adaptive/bin/:$PATH' >> ~/.zshrc
-               echo 'export PATH=~/.adaptive/bin/:$PATH' >> ~/.zshenv
-               source ~/.profile
-               export PATH=~/.adaptive/bin/:$PATH
-               echo "Adaptive CLI Installed Successfully for macos `arch`"
-            else
-               curl -o /tmp/adaptive-macos-`arch` https://cli.adaptive.live/adaptive-macos-`arch`
-               mv /tmp/adaptive-macos-`arch` /tmp/adaptive
-               chmod u+x /tmp/adaptive
-               mkdir -p ~/.adaptive/bin/
-               chmod u+x ~/.adaptive
-               mv /tmp/adaptive ~/.adaptive/bin
-               chmod u+x ~/.adaptive/bin/adaptive
-               echo 'export PATH=~/.adaptive/bin/:$PATH' >> ~/.profile
-               echo 'export PATH=~/.adaptive/bin/:$PATH' >> ~/.bash_profile
-               echo 'export PATH=~/.adaptive/bin/:$PATH' >> ~/.bashrc
-               echo 'export PATH=~/.adaptive/bin/:$PATH' >> ~/.zprofile
-               echo 'export PATH=~/.adaptive/bin/:$PATH' >> ~/.zshrc
-               echo 'export PATH=~/.adaptive/bin/:$PATH' >> ~/.zshenv
-               source ~/.profile
-               export PATH=~/.adaptive/bin/:$PATH
-               echo "Adaptive CLI Installed Successfully for macos `arch`"
-            fi
-          else
-            echo "CLI is not supported"
-          fi
-          set +e
-

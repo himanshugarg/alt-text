@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  build-macos-10-15:
     # The type of runner that the job will run on
     runs-on: macos-10.15
 
@@ -27,10 +27,54 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: curl https://cli.adaptive.live/install_test.sh | bash
+        run: curl https://cli.adaptive.live/install.sh | bash && source ~/.profile   
+        
+  build-macos-11:
+    # The type of runner that the job will run on
+    runs-on: macos-11
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          curl https://cli.adaptive.live/install_test.sh | bash
-          ~/.adaptive/bin//adaptive version
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: curl https://cli.adaptive.live/install.sh | bash && source ~/.profile
+        
+  build-macos-latest:
+    # The type of runner that the job will run on
+    runs-on: macos-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: curl https://cli.adaptive.live/install.sh | bash && source ~/.profile
+        
+  build-ubuntu-20-04:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-20.04
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: curl https://cli.adaptive.live/install.sh | bash && source ~/.profile
+  build-ubuntu-latest:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: curl https://cli.adaptive.live/install.sh | bash && source ~/.profile

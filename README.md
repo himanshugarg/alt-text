@@ -4,7 +4,7 @@
 
 In the previous week, I showed you how we can plot word vectors. Now, you will see how you can take a word vector and learn a mapping that will allow you to translate words by learning a "transformation matrix". 
 
-Note that the word "chat" in french means cat. You can learn that by taking the  vector [1, 0, 1] corresponding to "cat" in english, multiplying it by a matrix that you learn and then you can use cosine similarity between the output and all the french vectors. You should see that the closest result is the vector [2, 3, 3] which corresponds to "chat".
+Note that the word "chat" in french means cat. You can learn that by taking the  vector [1, 0, 1] corresponding to "cat" in english, multiplying it by a matrix that you learn and then you can use cosine similarity between the output and all the french vectors. You should see that the closest result is the vector [2, 3, 3] which corresponds to "chat"
 
 XR ~ Y
 

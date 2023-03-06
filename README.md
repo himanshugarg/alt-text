@@ -467,7 +467,7 @@ These include sarcasm, irony, euphemisms.
  4. The image shows the table labeled "I am sad, I am not learning NLP":
  
    Vocabulary | NegFreq(0)
-   --- | ---
+   --- |  ---
    I | 3
    am | 3
    happy | 0

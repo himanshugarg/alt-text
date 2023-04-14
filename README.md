@@ -1,6 +1,6 @@
 # Week 5
 
-## Transforming Word Vectors
+## Transforming Word vectors
 
 In the previous week, I showed you how we can plot word vectors. Now, you will see how you can take a word vector and learn a mapping that will allow you to translate words by learning a "transformation matrix". 
 
